@@ -21,6 +21,42 @@ app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
 
 # In-memory activity database
 activities = {
+    "Debate Club": {
+        "description": "Develop argumentation and public speaking skills",
+        "schedule": "Wednesdays, 4:00 PM - 5:30 PM",
+        "max_participants": 16,
+        "participants": ["alex@mergington.edu"]
+        },
+        "Robotics Club": {
+        "description": "Design and build robots for competitions",
+        "schedule": "Saturdays, 10:00 AM - 12:00 PM",
+        "max_participants": 15,
+        "participants": ["james@mergington.edu", "sarah@mergington.edu"]
+        },
+        "Basketball": {
+        "description": "Team sport focusing on basketball skills and competitive play",
+        "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
+        "max_participants": 15,
+        "participants": ["chris@mergington.edu"]
+        },
+        "Tennis": {
+        "description": "Individual and doubles tennis training",
+        "schedule": "Mondays and Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 12,
+        "participants": ["isabella@mergington.edu", "marcus@mergington.edu"]
+        },
+        "Visual Arts": {
+        "description": "Drawing, painting, and sculpture techniques",
+        "schedule": "Fridays, 4:00 PM - 5:30 PM",
+        "max_participants": 18,
+        "participants": ["mia@mergington.edu"]
+        },
+        "Music Band": {
+        "description": "Learn instruments and perform in ensemble groups",
+        "schedule": "Tuesdays and Thursdays, 2:30 PM - 3:30 PM",
+        "max_participants": 25,
+        "participants": ["lucas@mergington.edu", "grace@mergington.edu"]
+        },
     "Chess Club": {
         "description": "Learn strategies and compete in chess tournaments",
         "schedule": "Fridays, 3:30 PM - 5:00 PM",
@@ -61,7 +97,9 @@ def signup_for_activity(activity_name: str, email: str):
 
     # Get the specific activity
     activity = activities[activity_name]
+# Validate student is not already signed up 
 
     # Add student
     activity["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
+# Validate student is not already signed up (not implemented)
